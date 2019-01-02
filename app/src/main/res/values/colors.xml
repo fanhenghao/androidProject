@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#62b9d9</color>
+    <color name="colorPrimaryDark">#62b9d9</color>
+    <color name="colorAccent">#BDBDBF</color>
+
+    <!-- 通用color -->
+    <color name="bg_color">#ffffff</color>
+    <color name="text_color">#ffffff</color>
+    <color name="text_hint_color">#999999</color>
+    <color name="text_normal_color">#666666</color>
+    <color name="text_white_color">#ffffff</color>
+    <color name="line_color">#eeeeee</color>
+    <color name="transparency_color">#00000000</color>
+    <color name="theme_color">#62ceb8</color>
+    <color name="theme_color_normal">#22ceb8</color>
+
+    <!-- 登录color -->
+    <color name="btn_login_color">#4296DB</color>
+
+    <!-- 底部button -->
+    <color name="text_tab_s">#17abe3</color>
+    <color name="text_tab_n">#bfbfbf</color>
+
+    <!-- animation color -->
+    <color name="bg_animation">#81e4a4</color>
+    <color name="bg_animation_press">#1ee164</color>
+
+</resources>

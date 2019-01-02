@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="@dimen/margin_1"
+        android:layout_height="@dimen/margin_0"
+        android:layout_weight="1.2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/margin_5"
+        android:drawableTop="@mipmap/ic_login_head"
+        android:gravity="center"
+        android:text="@string/login_author"
+        android:textColor="@color/btn_login_color"
+        android:textSize="@dimen/text_size_16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_25"
+        android:layout_marginRight="@dimen/margin_25"
+        android:layout_marginTop="@dimen/margin_25"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_numbers"
+            android:layout_width="@dimen/margin_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableLeft="@drawable/ic_login_mobile"
+            android:drawablePadding="@dimen/margin_8"
+            android:hint="@string/login_user_name"
+            android:inputType="number"
+            android:maxLength="11"
+            android:padding="@dimen/margin_4"
+            android:singleLine="true"
+            android:textColor="@color/text_normal_color"
+            android:textColorHint="@color/text_hint_color"
+            android:textSize="@dimen/text_size_15" />
+
+        <ImageButton
+            android:id="@+id/ib_delete_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_login_x"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:layout_marginLeft="@dimen/margin_25"
+        android:layout_marginRight="@dimen/margin_25"
+        android:layout_marginTop="@dimen/margin_4"
+        android:background="@color/line_color" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_25"
+        android:layout_marginRight="@dimen/margin_25"
+        android:layout_marginTop="@dimen/margin_25"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/et_passwords"
+            android:layout_width="@dimen/margin_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawableLeft="@drawable/ic_login_lock"
+            android:drawablePadding="@dimen/margin_8"
+            android:hint="@string/login_password"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:padding="@dimen/margin_4"
+            android:singleLine="true"
+            android:textColor="@color/text_normal_color"
+            android:textColorHint="@color/text_hint_color"
+            android:textSize="@dimen/text_size_15" />
+
+        <ImageButton
+            android:id="@+id/ib_delete_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_login_x"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/ib_hide_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:background="@drawable/ic_login_eye_close"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:layout_marginLeft="@dimen/margin_25"
+        android:layout_marginRight="@dimen/margin_25"
+        android:layout_marginTop="@dimen/margin_4"
+        android:background="@color/line_color" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_43"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/margin_25"
+        android:layout_marginRight="@dimen/margin_25"
+        android:layout_marginTop="@dimen/margin_18"
+        android:background="@drawable/select_login_btn"
+        android:text="@string/login_btn"
+        android:textAllCaps="false"
+        android:textColor="@color/text_white_color"
+        android:textSize="@dimen/text_size_20" />
+
+
+    <View
+        android:layout_width="@dimen/margin_1"
+        android:layout_height="@dimen/margin_0"
+        android:layout_weight="1" />
+
+
+</LinearLayout>

@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">Technology</string>
+
+    <!-- login -->
+    <string name="login_author">Technology</string>
+    <string name="login_user_name">Please enter your phone number</string>
+    <string name="login_password">Please enter your password</string>
+    <string name="login_btn">login</string>
+    <string name="login_dialog_error">login failure</string>
+    <string name="login_dialog_remind">warm prompt</string>
+    <string name="login_dialog_error_content">Incorrect password or account number!</string>
+    <string name="login_dialog_error_remind">The phone number needs to be entered in 11 digits and The password needs to be entered in 6 bits</string>
+    <string name="login_dialog_confirm">confirm</string>
+    <string name="login_success">登陆成功</string>
+
+    <!-- 底部button -->
+    <string name="tab_bottom_home">主页</string>
+    <string name="tab_bottom_discover">发现</string>
+    <string name="tab_bottom_tool">工具</string>
+    <string name="tab_bottom_wait">等待</string>
+    <string name="tab_bottom_person">个人</string>
+
+    <!-- 主页-> animation Animation_Button Animation_Else-->
+    <string name="animation_toolbar_title">Animation</string>
+    <string name="animation_button_toolbar_title">Animation Button</string>
+    <string name="animation_button_normal">默认按钮</string>
+    <string name="animation_button_ripple">水波纹按钮</string>
+    <string name="animation_button_bg">背景按钮</string>
+    <string name="animation_button_custom">自定义按钮</string>
+    <string name="animation_button_style_1">样式一</string>
+    <string name="animation_button_style_2">样式二</string>
+    <string name="animation_button_style_3">样式三</string>
+    <string name="animation_other_toolbar_title">Animation Other</string>
+    <string name="animation_other_arrow_rotate">旋转</string>
+    <string name="animation_other_arrow_translate">移动</string>
+    <string name="animation_other_animation_set">AnimationSet</string>
+    <string name="animation_normal">补间动画</string>
+    <string name="animation_attribute">属性动画</string>
+    <string name="animation_xml">XML动画</string>
+    <string name="animation_attribute_rotate">旋转</string>
+    <string name="animation_attribute_scale">缩放</string>
+    <string name="animation_attribute_alpha">透明</string>
+    <string name="animation_attribute_group">组合属性动画</string>
+    <string name="animation_xml_group">组合xml动画</string>
+
+    <!-- 主页->头像👮 -->
+    <string name="head_title">头像</string>
+    <string name="head_photograph">从相机拍照</string>
+    <string name="head_album_choice">从相册选择</string>
+
+    <!-- 主页-> theme -->
+    <string name="theme_title">theme</string>
+    <string name="theme_button_switch">random switcher</string>
+
+    <!-- 个人 -->
+    <string name="person_about_author">关于作者</string>
+    <string name="person_login_out">退出登陆</string>
+
+    <!-- 发现-> cardView -->
+    <string name="text_card_view">CardView</string>
+    <string name="text_circular_size">控制圆角大小</string>
+    <string name="text_shadow_size">控制阴影大小</string>
+    <string name="text_picture_distance">控制图片间距</string>
+
+    <!-- 发现-> SQLite -->
+    <string name="sqlite_title">SQLite</string>
+    <string name="sqlite_insert">增</string>
+    <string name="sqlite_delete">删</string>
+    <string name="sqlite_update">改</string>
+    <string name="sqlite_query">查</string>
+    <string name="sqlite_name">姓名</string>
+    <string name="sqlite_age">年龄</string>
+    <string name="sqlite_sex">性别</string>
+    <string name="sqlite_man">男</string>
+    <string name="sqlite_woman">女</string>
+    <string name="sqlite_create">创建数据库</string>
+
+    <!-- 发现->progress step -->
+    <string name="progress_step_title">Progress Step</string>
+
+    <string name="text_annular_percentage">环形百分比</string>
+
+    <!-- 全局-> warn -->
+    <string name="navigation_drawer_open">navigation_drawer_open</string>
+    <string name="navigation_drawer_close">navigation_drawer_close</string>
+
+    <!-- else -->
+    <string name="text_content_wait">待实现中</string>
+
+
+</resources>

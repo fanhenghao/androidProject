@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.fhh.technology">
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <application
+        android:name=".base.TechnologyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_app_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".module.splash.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash_Style">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".module.main.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.login.LoginActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.home.animation.AnimationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.home.animation.other.AnimationOtherActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.home.customview.ViewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.home.animation.button.AnimationButtonActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.person.author.AboutAuthorActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.home.theme.ThemeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.discover.cardview.CardViewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.discover.annular.AnnularPercentageActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.discover.edit.EditTextActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.home.headicon.HeadPortraitActivity"
+            android:screenOrientation="portrait" />
+
+        <!--${applicationId}==包名-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <activity
+            android:name=".module.discover.sqlite.SQLiteActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.discover.progress.ProgressStepActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

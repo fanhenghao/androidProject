@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/text_size_18" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.fhh.technology.view.TimeClock
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_15"
+        android:textColor="@color/text_normal_color" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin_25"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:id="@+id/tv_about_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/select_bg_person"
+        android:gravity="center_horizontal"
+        android:paddingBottom="@dimen/margin_12"
+        android:paddingTop="@dimen/margin_12"
+        android:text="@string/person_about_author"
+        android:textColor="@color/text_normal_color"
+        android:textSize="@dimen/text_size_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_color" />
+
+    <TextView
+        android:id="@+id/tv_login_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/select_bg_person"
+        android:gravity="center_horizontal"
+        android:paddingBottom="@dimen/margin_12"
+        android:paddingTop="@dimen/margin_12"
+        android:text="@string/person_login_out"
+        android:textColor="@color/text_normal_color"
+        android:textSize="@dimen/text_size_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_color" />
+
+
+</LinearLayout>

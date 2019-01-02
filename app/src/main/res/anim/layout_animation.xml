@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1200"
+    android:ordering="together">
+
+    <!-- <animator>  对应代码中的ValueAnimator
+         <objectAnimator>  对应代码中的ObjectAnimator
+         <set>  对应代码中的AnimatorSet-->
+
+    <!--比如说想要实现一个从0到100平滑过渡的动画，在XML当中就可以这样写：
+    <animator xmlns:android="http://schemas.android.com/apk/res/android"
+        android:valueFrom="0"
+        android:valueTo="100"
+        android:valueType="intType"/>-->
+
+    <!--如果想将一个视图的alpha属性从1变成0，就可以这样写：
+    <objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+        android:valueFrom="1"
+        android:valueTo="0"
+        android:valueType="floatType"
+        android:propertyName="alpha"/>-->
+
+    <objectAnimator
+        android:propertyName="translationX"
+        android:valueFrom="1"
+        android:valueTo="0.5"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:propertyName="translationY"
+        android:valueFrom="1"
+        android:valueTo="0.5"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:propertyName="translationX"
+        android:valueFrom="0.5"
+        android:valueTo="1"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:propertyName="translationY"
+        android:valueFrom="0.5"
+        android:valueTo="1"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:propertyName="scale"
+        android:valueFrom="1"
+        android:valueTo="0.7"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:propertyName="scale"
+        android:valueFrom="0.7"
+        android:valueTo="1"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:propertyName="rotation"
+        android:valueFrom="0"
+        android:valueTo="100"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:propertyName="alpha"
+        android:valueFrom="1"
+        android:valueTo="0.6"
+        android:valueType="floatType" />
+    <objectAnimator
+        android:propertyName="alpha"
+        android:valueFrom="0.6"
+        android:valueTo="1"
+        android:valueType="floatType" />
+</set>

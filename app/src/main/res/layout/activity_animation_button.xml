@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_animation">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/animation_button_toolbar_title"
+            android:textColor="@color/text_white_color" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_25"
+            android:layout_marginTop="@dimen/margin_25"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!--默认按钮-->
+            <Button
+                android:layout_width="240dp"
+                android:layout_height="100dp"
+                android:text="@string/animation_button_normal" />
+
+            <!--圆形水波-->
+            <Button
+                android:layout_width="240dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="100dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:text="@string/animation_button_ripple"
+                tools:targetApi="lollipop" />
+
+            <!--背景显示-->
+            <Button
+                android:layout_width="240dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="100dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="@string/animation_button_bg" />
+
+            <!--自定义动画-->
+            <Button
+                android:id="@+id/btn_custom"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/select_btn_animation"
+                android:text="@string/animation_button_custom" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_marginRight="@dimen/margin_15"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_style_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_weight="1"
+                    android:background="@color/bg_animation"
+                    android:text="@string/animation_button_style_1" />
+
+                <Button
+                    android:id="@+id/btn_style_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_weight="1"
+                    android:background="@color/bg_animation"
+                    android:text="@string/animation_button_style_2" />
+
+                <Button
+                    android:id="@+id/btn_style_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/bg_animation"
+                    android:text="@string/animation_button_style_3" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

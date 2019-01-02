@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/text_size_18" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <com.fhh.technology.module.discover.annular.CustomView
+        android:id="@+id/custom_view"
+        android:layout_width="wrap_content"
+        android:background="@color/text_color"
+        android:layout_height="150dp">
+
+    </com.fhh.technology.module.discover.annular.CustomView>
+
+    <com.fhh.technology.module.discover.annular.CustomView2
+        android:id="@+id/custom_view_2"
+        android:layout_width="250dp"
+        android:background="@color/text_color"
+        android:layout_height="250dp"
+        android:layout_marginTop="50dp" />
+
+</LinearLayout>
