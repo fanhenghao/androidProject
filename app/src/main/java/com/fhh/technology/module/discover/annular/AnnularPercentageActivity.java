@@ -2,13 +2,15 @@ package com.fhh.technology.module.discover.annular;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.TextView;
 
 import com.fhh.technology.R;
 import com.fhh.technology.base.BaseActivity;
-import com.fhh.technology.http.bean.CustomViewBean;
+import com.fhh.technology.base.Constant;
+import com.fhh.technology.network.bean.CustomViewBean;
 import com.fhh.technology.utils.ToolBarOptions;
+import com.jaeger.library.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +40,11 @@ public class AnnularPercentageActivity extends BaseActivity {
 
     @Override
     public void initToolBar() {
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.bg_find_title), Constant.STATUS_BAR_ALPHA);
         mToolbarTitle.setText(R.string.text_annular_percentage);
         ToolBarOptions options = new ToolBarOptions();
         options.isNeedNavigate = true;
-        options.backgroundColor = R.color.colorPrimary;
+        options.backgroundColor = R.color.bg_find_title;
         setToolBar(R.id.toolbar, options);
     }
 

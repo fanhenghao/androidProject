@@ -9,18 +9,18 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.FileProvider;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.fhh.technology.R;
 import com.fhh.technology.base.BaseActivity;
 import com.fhh.technology.base.Constant;
+import com.fhh.technology.base.TechnologyApplication;
 import com.fhh.technology.utils.ImageUtils;
 import com.fhh.technology.utils.RoundHeadUtils;
 import com.fhh.technology.utils.SharedPreferenceUtils;
@@ -129,7 +129,7 @@ public class HeadPortraitActivity extends BaseActivity implements HeadPortraitCo
                 if (readPermission && writePermission) {
                     openCamera();
                 } else {
-                    Toast.makeText(this, "当前没有得到权限，请给予权限", Toast.LENGTH_SHORT).show();
+                    showToast("当前没有得到权限，请给予权限");
                 }
                 break;
             case PERMISSION_ALBUM:
@@ -137,7 +137,7 @@ public class HeadPortraitActivity extends BaseActivity implements HeadPortraitCo
                 if (readPermission && writePermission) {
                     openAlbum();
                 } else {
-                    Toast.makeText(this, "当前没有得到权限，请给予权限", Toast.LENGTH_SHORT).show();
+                    showToast("当前没有得到权限，请给予权限");
                 }
                 break;
         }
@@ -148,8 +148,9 @@ public class HeadPortraitActivity extends BaseActivity implements HeadPortraitCo
         Intent intoPhotograph = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         mPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) +
                 File.separator + System.currentTimeMillis() + ".jpeg";
+
         mImaegeUri = FileProvider.getUriForFile(mActivity,
-                mActivity.getApplicationContext().getPackageName(),
+                TechnologyApplication.getInstance().getPackageName(),
                 new File(mPath));
         intoPhotograph.putExtra(MediaStore.EXTRA_OUTPUT, mImaegeUri);
         // 授予目录临时共享权限
@@ -188,20 +189,24 @@ public class HeadPortraitActivity extends BaseActivity implements HeadPortraitCo
                     loadPath(realPathFromUri);
                     Log.e("test", "得相册到的路径为2：" + realPathFromUri);
                 } else {
-                    Toast.makeText(this, "获取图片失败！！！", Toast.LENGTH_SHORT).show();
+                    showToast("获取图片失败！！！");
                 }
                 break;
             case REQUEST_PHOTOGRAPH_CODE:
-                SharedPreferenceUtils.getInstance(this).put(Constant.PICTURE_URL_KEY, mPath);
-                loadPath(mPath);
-                Log.e("test", "得到拍照的路径为：" + mPath);
+                if (resultCode == 0) {//未得到拍照的图片
+
+                } else if (resultCode == -1) {//得到了拍照的图片
+                    SharedPreferenceUtils.getInstance(this).put(Constant.PICTURE_URL_KEY, mPath);
+                    loadPath(mPath);
+                    Log.e("test", "得到拍照的路径为：" + mPath);
+                }
                 break;
         }
     }
 
     @Override
     public void onDestroyActivity() {
-        mPermission = null;
+        mPresenter = null;
     }
 
     @Override

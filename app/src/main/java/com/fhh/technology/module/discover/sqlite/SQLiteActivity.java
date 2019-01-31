@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,8 +15,8 @@ import android.widget.TextView;
 import com.fhh.technology.R;
 import com.fhh.technology.base.BaseActivity;
 import com.fhh.technology.base.Constant;
-import com.fhh.technology.utils.ToastUtil;
 import com.fhh.technology.utils.ToolBarOptions;
+import com.jaeger.library.StatusBarUtil;
 
 
 import butterknife.BindView;
@@ -63,10 +63,11 @@ public class SQLiteActivity extends BaseActivity implements SQLiteContract.View,
 
     @Override
     public void initToolBar() {
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.bg_find_title), Constant.STATUS_BAR_ALPHA);
         mToolbarTitle.setText(getString(R.string.sqlite_title));
         ToolBarOptions options = new ToolBarOptions();
         options.isNeedNavigate = true;
-        options.backgroundColor = R.color.colorPrimary;
+        options.backgroundColor = R.color.bg_find_title;
         setToolBar(R.id.toolbar, options);
     }
 
@@ -117,7 +118,8 @@ public class SQLiteActivity extends BaseActivity implements SQLiteContract.View,
     @Override
     public void createSQLite(int type) {
         if (mDbOpenHelper == null) {
-            ToastUtil.showToast(mActivity, "未创建数据库");
+//            ToastUtil.showToast(mActivity, "未创建数据库");
+            showToast("未创建数据库");
             return;
         }
         SQLiteDatabase db = mDbOpenHelper.getWritableDatabase();
@@ -142,10 +144,5 @@ public class SQLiteActivity extends BaseActivity implements SQLiteContract.View,
                 mTvContent.setText(data);
                 break;
         }
-    }
-
-    @Override
-    public void showToast(String remind) {
-        ToastUtil.showToast(mActivity, remind);
     }
 }

@@ -25,6 +25,8 @@ public interface Constant {
     int EDIT_TEXT = 2;//EditText
     int SQLITE_DATA_BASE = 3;//SQLite
     int PROGRESS_STEP = 4;//进度步骤
+    int HUMOROUS_JOKES = 5;//Humorous jokes
+    int WEATHER = 6;//weather
 
     //SQLite type
     int ADD = 1;
@@ -37,5 +39,21 @@ public interface Constant {
     //sharedPreference
     String SHAREPRE_NAME = "heng";//存储文件的名称
     String PICTURE_URL_KEY = "picture_url_key";
+
+    //http
+    String HTTP_BASE = "https://www.apiopen.top/";
+    String HTTP_KEY = "00d91e8e0cca2b76f515926a36db68f5";//服务器需要的key
+    int HTTP_CODE = 200;
+
+    //幽默笑话段子类型
+    int SATIN_TYPE_ALL = 1;
+    int SATIN_TYPE_TEXT = 2;
+    int SATIN_TYPE_PICTURE = 3;
+    int SATIN_TYPE_VIDEO = 4;
+    //请求幽默笑话接口刷新类型
+    int REFRESH_NORMAL = 1;//普通刷新
+    int REFRESH_PULL_DOWN = 2;//下拉刷新
+    int REFRESH_UP_LOAD_MORE = 3;//加载更多
+
 
 }

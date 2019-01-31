@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.text.TextUtils;
 
 import com.fhh.technology.R;
+import com.fhh.technology.network.bean.LoginBean;
 
 /**
  * desc:
@@ -17,10 +18,12 @@ public class LoginPresenter implements LoginContract.Presenter {
 
     private Activity mActivity;
     private LoginContract.View mView;
+    private final ILoginModel mModel;
 
     public LoginPresenter(Activity activity, LoginContract.View view) {
         this.mActivity = activity;
         this.mView = view;
+        mModel = new LoginModel();
     }
 
     @Override
@@ -36,7 +39,19 @@ public class LoginPresenter implements LoginContract.Presenter {
             mView.errorRemind(R.string.login_dialog_remind, R.string.login_dialog_error_remind);
             return;
         }
-        mView.loginSuccess(R.string.login_success);
+
+        mModel.loginInfo(number, password, new ILoginModel.loginListener() {
+            @Override
+            public void responseLoginSuccess(LoginBean loginBean) {
+                mView.loginSuccess(R.string.login_success);
+            }
+
+            @Override
+            public void responseLoginFail(String errorMsg) {
+                //请求失败
+                mView.loginError(errorMsg);
+            }
+        });
 
     }
 }

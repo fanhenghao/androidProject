@@ -1,6 +1,6 @@
 package com.fhh.technology.widget;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.fhh.technology.R;
 import com.fhh.technology.module.discover.DiscoverFragment;

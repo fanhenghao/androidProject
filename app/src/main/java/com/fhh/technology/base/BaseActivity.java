@@ -5,17 +5,17 @@ import android.app.Application;
 import android.content.ComponentCallbacks;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 
 import com.fhh.technology.event.DefaultEvent;
-import com.fhh.technology.event.DrawerLayoutEvent;
+import com.fhh.technology.utils.ToastUtil;
 import com.fhh.technology.utils.ToolBarOptions;
 
 import org.greenrobot.eventbus.EventBus;
@@ -53,7 +53,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             EventBus.getDefault().register(this);
         }
     }
-
 
     //参照今日头条方案解决适配问题
     public static void setCustomDensity(@NonNull Activity activity, @NonNull final Application application) {
@@ -102,6 +101,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.e("TECHNOLOGY", this.getClass().getSimpleName() + "------onRestoreInstanceState");
+    }
+
+    @Override
     protected void onRestart() {
         super.onRestart();
         Log.e("TECHNOLOGY", this.getClass().getSimpleName() + "------onRestart");
@@ -111,6 +116,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.e("TECHNOLOGY", this.getClass().getSimpleName() + "------onResume");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.e("TECHNOLOGY", this.getClass().getSimpleName() + "------onSaveInstanceState");
     }
 
     @Override
@@ -171,6 +182,14 @@ public abstract class BaseActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public void showToast(String s) {
+        ToastUtil.showToast(this, s);
+    }
+
+    public void showToast(int resId) {
+        ToastUtil.showToast(this, resId + "");
     }
 
     private void onNavigateUpClicked() {

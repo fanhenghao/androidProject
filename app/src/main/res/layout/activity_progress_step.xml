@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,17 +21,17 @@
             android:textColor="@color/text_white_color"
             android:textSize="@dimen/text_size_18" />
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <com.fhh.technology.module.discover.progress.StepView
         android:id="@+id/step_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="@dimen/margin_20" />
 
     <Button
         android:id="@+id/btn"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_20"
         android:onClick="onClick"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"

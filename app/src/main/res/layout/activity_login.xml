@@ -27,8 +27,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_25"
-        android:layout_marginRight="@dimen/margin_25"
         android:layout_marginTop="@dimen/margin_25"
+        android:layout_marginRight="@dimen/margin_25"
         android:orientation="horizontal">
 
         <EditText
@@ -63,8 +63,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_1"
         android:layout_marginLeft="@dimen/margin_25"
-        android:layout_marginRight="@dimen/margin_25"
         android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginRight="@dimen/margin_25"
         android:background="@color/line_color" />
 
 
@@ -72,8 +72,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_25"
-        android:layout_marginRight="@dimen/margin_25"
         android:layout_marginTop="@dimen/margin_25"
+        android:layout_marginRight="@dimen/margin_25"
         android:orientation="horizontal">
 
 
@@ -119,8 +119,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/margin_1"
         android:layout_marginLeft="@dimen/margin_25"
-        android:layout_marginRight="@dimen/margin_25"
         android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginRight="@dimen/margin_25"
         android:background="@color/line_color" />
 
     <Button
@@ -129,13 +129,24 @@
         android:layout_height="@dimen/margin_43"
         android:layout_gravity="center"
         android:layout_marginLeft="@dimen/margin_25"
-        android:layout_marginRight="@dimen/margin_25"
         android:layout_marginTop="@dimen/margin_18"
+        android:layout_marginRight="@dimen/margin_25"
         android:background="@drawable/select_login_btn"
         android:text="@string/login_btn"
         android:textAllCaps="false"
         android:textColor="@color/text_white_color"
         android:textSize="@dimen/text_size_20" />
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_25"
+        android:text="@string/register_btn"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/text_size_15" />
 
 
     <View

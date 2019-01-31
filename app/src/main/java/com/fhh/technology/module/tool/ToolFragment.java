@@ -1,7 +1,6 @@
 package com.fhh.technology.module.tool;
 
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.TextView;
 
 import com.fhh.technology.R;

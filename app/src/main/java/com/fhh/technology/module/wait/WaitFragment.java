@@ -1,7 +1,7 @@
 package com.fhh.technology.module.wait;
 
 
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.TextView;
 
 import com.fhh.technology.R;

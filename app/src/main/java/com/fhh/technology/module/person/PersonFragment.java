@@ -1,7 +1,7 @@
 package com.fhh.technology.module.person;
 
 
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -9,11 +9,9 @@ import com.fhh.technology.R;
 import com.fhh.technology.base.BaseFragment;
 import com.fhh.technology.module.login.LoginActivity;
 import com.fhh.technology.module.person.author.AboutAuthorActivity;
-import com.fhh.technology.utils.ToastUtil;
 import com.fhh.technology.utils.ToolBarOptions;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * desc:

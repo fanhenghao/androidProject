@@ -2,6 +2,7 @@ package com.fhh.technology.module.login;
 
 import android.content.Context;
 import android.content.Intent;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
@@ -10,10 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.fhh.technology.R;
 import com.fhh.technology.base.BaseActivity;
+import com.fhh.technology.module.login.register.RegisterActivity;
 import com.fhh.technology.module.main.MainActivity;
 import com.fhh.technology.utils.ToastUtil;
 
@@ -38,6 +42,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     ImageButton mIbHidePassword;
     @BindView(R.id.btn_login)
     Button mBtnLogin;
+    @BindView(R.id.tv_register)
+    TextView mTvRegister;
 
 
     private boolean showPassword;
@@ -76,18 +82,15 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     }
 
     private void initListener() {
-        mEtNumbers.setText("12312322211");
+        mEtNumbers.setText("13592127810");
+        mEtNumbers.setSelection(mEtNumbers.length());
         mEtPasswords.setText("123456");
         mIbDeleteNumber.setOnClickListener(this);
         mIbDeletePassword.setOnClickListener(this);
         mIbHidePassword.setOnClickListener(this);
+        mTvRegister.setOnClickListener(this);
         mBtnLogin.setOnClickListener(this);
-        mEtNumbers.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
+        mEtNumbers.addTextChangedListener(new MyWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().length() > 0) {
@@ -96,18 +99,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     mIbDeleteNumber.setVisibility(View.GONE);
                 }
             }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
         });
-        mEtPasswords.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
+        mEtPasswords.addTextChangedListener(new MyWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().length() > 0) {
@@ -117,11 +110,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     mIbDeletePassword.setVisibility(View.GONE);
                     mIbHidePassword.setVisibility(View.GONE);
                 }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
             }
         });
 
@@ -159,14 +147,17 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     mPresenter.manageNumberAndPassword(number, password);
                 }
                 break;
+            case R.id.tv_register:
+                RegisterActivity.start(this);
+                break;
         }
     }
 
     @Override
-    public void errorRemind(int title, int reeId) {
+    public void errorRemind(int title, int resId) {
         new MaterialDialog.Builder(this)
                 .title(title)
-                .content(reeId)
+                .content(resId)
                 .positiveColor(getResources().getColor(R.color.btn_login_color))
                 .positiveText(R.string.login_dialog_confirm)
                 .show();
@@ -177,5 +168,43 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         ToastUtil.showToast(this, successRemind);
         MainActivity.start(this);
         finish();
+    }
+
+    @Override
+    public void loginError(String errorMsg) {
+        ToastUtil.showToast(this, errorMsg);
+        new MaterialDialog.Builder(this)
+                .title(R.string.login_dialog_net_error_title)
+                .content(R.string.login_dialog_net_error_content)
+                .positiveColor(getResources().getColor(R.color.btn_login_color))
+                .positiveText(R.string.login_dialog_confirm)
+                .negativeText(R.string.login_dialog_cancel)
+                .negativeColor(getResources().getColor(R.color.text_tab_n))
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        loginSuccess(R.string.login_location);
+                    }
+                })
+                .show();
+    }
+
+
+    class MyWatcher implements TextWatcher {
+
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
     }
 }

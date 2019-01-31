@@ -1,15 +1,19 @@
 package com.fhh.technology.module.discover;
 
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+
+import android.annotation.SuppressLint;
 import android.widget.TextView;
 
 import com.fhh.technology.R;
 import com.fhh.technology.base.BaseFragment;
 import com.fhh.technology.base.Constant;
-import com.fhh.technology.http.bean.DiscoverDataBean;
+import com.fhh.technology.module.discover.humor.HumorActivity;
+import com.fhh.technology.module.discover.weather.WeatherActivity;
+import com.fhh.technology.network.bean.DiscoverDataBean;
 import com.fhh.technology.module.discover.annular.AnnularPercentageActivity;
 import com.fhh.technology.module.discover.cardview.CardViewActivity;
 import com.fhh.technology.module.discover.edit.EditTextActivity;
@@ -55,30 +59,32 @@ public class DiscoverFragment extends BaseFragment implements DiscoverContract.V
         }
     }
 
+    @SuppressLint("WrongConstant")
     @Override
     public void initData() {
         DiscoverDataBean bean = new DiscoverDataBean();
         DiscoverAdapter adapter = new DiscoverAdapter(getContext(), bean);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         mRecyclerView.setAdapter(adapter);
-        adapter.setListener(new DiscoverAdapter.OnListener() {
-            @Override
-            public void onClick(int position) {
-                if (position == Constant.CARD_VIEW) {
-                    CardViewActivity.start(getContext());
-                } else if (position == Constant.ANNULAR_PERCENTAGE) {
-                    AnnularPercentageActivity.start(getActivity());
-                } else if (position == Constant.EDIT_TEXT) {
-                    EditTextActivity.start(getContext());
-                } else if (position == Constant.SQLITE_DATA_BASE) {
-                    SQLiteActivity.start(getActivity());
-                } else if (position == Constant.PROGRESS_STEP) {
-                    ProgressStepActivity.start(getActivity());
-                } else {
-                    ToastUtil.showToast(getContext(), "" + position);
-                }
-
+        adapter.setListener(position -> {
+            if (position == Constant.CARD_VIEW) {
+                CardViewActivity.start(getContext());
+            } else if (position == Constant.ANNULAR_PERCENTAGE) {
+                AnnularPercentageActivity.start(getActivity());
+            } else if (position == Constant.EDIT_TEXT) {
+                EditTextActivity.start(getContext());
+            } else if (position == Constant.SQLITE_DATA_BASE) {
+                SQLiteActivity.start(getActivity());
+            } else if (position == Constant.PROGRESS_STEP) {
+                ProgressStepActivity.start(getActivity());
+            } else if (position == Constant.HUMOROUS_JOKES) {
+                HumorActivity.start(getActivity());
+            } else if (position == Constant.WEATHER) {
+                WeatherActivity.start(getActivity());
+            } else {
+                ToastUtil.showToast(getContext(), "" + position);
             }
+
         });
     }
 

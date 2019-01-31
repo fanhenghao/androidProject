@@ -1,4 +1,4 @@
-package com.fhh.technology.http.bean;
+package com.fhh.technology.network.bean;
 
 import java.util.List;
 

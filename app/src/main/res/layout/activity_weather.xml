@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_f2f2f2f2"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_find_title"
+        android:minHeight="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/text_size_18" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_25"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_input_city"
+            android:layout_width="@dimen/margin_0"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:layout_weight="1"
+            android:hint="@string/weather_input"
+            android:textSize="@dimen/text_size_16"
+            tools:ignore="InefficientWeight" />
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_15"
+            android:layout_marginRight="@dimen/margin_15"
+            android:background="@drawable/select_humor_bg"
+            android:maxLength="8"
+            android:paddingLeft="@dimen/margin_15"
+            android:paddingTop="@dimen/margin_9"
+            android:paddingRight="@dimen/margin_15"
+            android:paddingBottom="@dimen/margin_9"
+            android:text="@string/weather_search"
+            android:textColor="@drawable/select_text_color"
+            android:textSize="@dimen/text_size_16" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_10"
+        android:textColor="@color/text_normal_color"
+        android:textSize="@dimen/text_size_15"
+        tools:text="21日星期一" />
+
+    <TextView
+        android:id="@+id/tv_wind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_5"
+        android:textColor="@color/text_normal_color"
+        android:textSize="@dimen/text_size_15"
+        tools:text="西风" />
+
+    <TextView
+        android:id="@+id/tv_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_5"
+        android:textColor="@color/text_normal_color"
+        android:textSize="@dimen/text_size_15"
+        tools:text="0-13" />
+
+    <TextView
+        android:id="@+id/tv_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_5"
+        android:textColor="@color/text_normal_color"
+        android:textSize="@dimen/text_size_15"
+        tools:text="多云" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginRight="@dimen/margin_10"
+        android:textColor="@color/text_normal_color"
+        android:textSize="@dimen/text_size_15"
+        tools:text="昼夜温差很大，易发生感冒，请注意适当增减衣服，加强自我防护避免感冒。" />
+
+</LinearLayout>

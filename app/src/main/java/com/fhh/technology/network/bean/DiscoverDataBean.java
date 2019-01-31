@@ -1,4 +1,4 @@
-package com.fhh.technology.http.bean;
+package com.fhh.technology.network.bean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +18,8 @@ public class DiscoverDataBean {
         itemData.add("EditText");
         itemData.add("SQLite Date Base");
         itemData.add("Progress Step");
-        itemData.add("Item5");
-        itemData.add("Item6");
+        itemData.add("Humor");
+        itemData.add("Weather");
         itemData.add("Item7");
         itemData.add("Item8");
         itemData.add("Item9");

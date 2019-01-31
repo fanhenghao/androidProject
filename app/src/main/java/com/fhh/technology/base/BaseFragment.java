@@ -3,18 +3,18 @@ package com.fhh.technology.base;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.fhh.technology.utils.ToastUtil;
 import com.fhh.technology.utils.ToolBarOptions;
 
 import butterknife.ButterKnife;
@@ -49,11 +49,16 @@ public abstract class BaseFragment extends Fragment {
     }
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.e("TECHNOLOGY", this.getClass().getSimpleName() + "------onActivityCreated");
+    }
+
+    @Override
     public void onStart() {
         super.onStart();
         Log.e("TECHNOLOGY", this.getClass().getSimpleName() + "------onStart");
     }
-
 
     @Override
     public void onResume() {
@@ -65,6 +70,12 @@ public abstract class BaseFragment extends Fragment {
     public void onPause() {
         super.onPause();
         Log.e("TECHNOLOGY", this.getClass().getSimpleName() + "------onPause");
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.e("TECHNOLOGY", this.getClass().getSimpleName() + "------onSaveInstanceState");
     }
 
     @Override
@@ -110,6 +121,15 @@ public abstract class BaseFragment extends Fragment {
             });
         }
     }
+
+    public void showToast(String s) {
+        ToastUtil.showToast(getContext(), s);
+    }
+
+    public void showToast(int resId) {
+        ToastUtil.showToast(getContext(), resId + "");
+    }
+
 
     public abstract int setContentLayout();
 

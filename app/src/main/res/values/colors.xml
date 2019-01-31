@@ -7,6 +7,8 @@
     <!-- 通用color -->
     <color name="bg_color">#ffffff</color>
     <color name="text_color">#ffffff</color>
+    <color name="bg_color_f2f2f2f2">#f2f2f2f2</color>
+    <color name="bg_color_f6c3bc">#f6c3bc</color>
     <color name="text_hint_color">#999999</color>
     <color name="text_normal_color">#666666</color>
     <color name="text_white_color">#ffffff</color>
@@ -22,8 +24,11 @@
     <color name="text_tab_s">#17abe3</color>
     <color name="text_tab_n">#bfbfbf</color>
 
-    <!-- animation color -->
+    <!-- animation and person color -->
     <color name="bg_animation">#81e4a4</color>
     <color name="bg_animation_press">#1ee164</color>
+
+    <!-- humor color -->
+    <color name="bg_find_title">#f62c12</color>
 
 </resources>

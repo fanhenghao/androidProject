@@ -2,7 +2,7 @@ package com.my.libdialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.v7.app.ActionBar;
+import androidx.appcompat.app.ActionBar;
 import android.text.TextPaint;
 import android.util.Log;
 import android.view.Gravity;

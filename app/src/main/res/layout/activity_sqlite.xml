@@ -5,7 +5,7 @@
     android:background="@color/bg_color"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,9 +21,9 @@
             android:textColor="@color/text_white_color"
             android:textSize="@dimen/text_size_18" />
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -36,24 +36,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginRight="@dimen/margin_20"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sqlite_name"
-                    android:textSize="15sp" />
+                    android:textSize="@dimen/text_size_15" />
 
                 <EditText
                     android:id="@+id/et_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/margin_10"
                     android:textColor="@color/text_normal_color"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/text_size_14" />
 
             </LinearLayout>
 
@@ -61,24 +61,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_20"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sqlite_age"
-                    android:textSize="15sp" />
+                    android:textSize="@dimen/text_size_15" />
 
                 <EditText
                     android:id="@+id/et_age"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/margin_14"
                     android:textColor="@color/text_normal_color"
-                    android:textSize="14sp" />
+                    android:textSize="@dimen/text_size_14" />
 
             </LinearLayout>
 
@@ -86,9 +86,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_20"
                 android:orientation="horizontal">
 
                 <TextView
@@ -96,13 +96,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/sqlite_sex"
-                    android:textSize="15sp" />
+                    android:textSize="@dimen/text_size_15" />
 
                 <RadioGroup
                     android:id="@+id/rg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/margin_10"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -112,16 +112,16 @@
                         android:layout_gravity="center"
                         android:text="@string/sqlite_man"
                         android:textColor="@color/text_normal_color"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/text_size_14" />
 
                     <RadioButton
                         android:id="@+id/rb_woman"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="@dimen/margin_20"
                         android:text="@string/sqlite_woman"
                         android:textColor="@color/text_normal_color"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/text_size_14" />
 
                 </RadioGroup>
 
@@ -129,29 +129,29 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2px"
-                android:layout_marginTop="10dp"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_10"
                 android:background="@color/line_color" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_20"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btn_insert"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/margin_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="@dimen/margin_20"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/sqlite_insert"
                     android:textColor="@color/text_normal_color"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/text_size_16" />
 
 
                 <Button
@@ -162,27 +162,27 @@
                     android:gravity="center"
                     android:text="@string/sqlite_delete"
                     android:textColor="@color/text_normal_color"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/text_size_16" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginRight="@dimen/margin_20"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btn_update"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="@dimen/margin_20"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/sqlite_update"
                     android:textColor="@color/text_normal_color"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/text_size_16" />
 
                 <Button
                     android:id="@+id/btn_query"
@@ -192,27 +192,27 @@
                     android:gravity="center"
                     android:text="@string/sqlite_query"
                     android:textColor="@color/text_normal_color"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/text_size_16" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2px"
-                android:layout_marginTop="10dp"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_10"
                 android:background="@color/line_color" />
 
             <TextView
                 android:id="@+id/tv_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginLeft="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_20" />
 
         </LinearLayout>
 
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
 </LinearLayout>

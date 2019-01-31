@@ -6,12 +6,19 @@
     <string name="login_user_name">Please enter your phone number</string>
     <string name="login_password">Please enter your password</string>
     <string name="login_btn">login</string>
+    <string name="register_btn">register</string>
     <string name="login_dialog_error">login failure</string>
+    <string name="register_dialog_error">register failure</string>
     <string name="login_dialog_remind">warm prompt</string>
     <string name="login_dialog_error_content">Incorrect password or account number!</string>
+    <string name="register_dialog_error_content">The cell phone number or password is empty!</string>
     <string name="login_dialog_error_remind">The phone number needs to be entered in 11 digits and The password needs to be entered in 6 bits</string>
     <string name="login_dialog_confirm">confirm</string>
+    <string name="login_dialog_cancel">cancel</string>
+    <string name="login_dialog_net_error_title">Abnormal login</string>
+    <string name="login_dialog_net_error_content">Server login abnormal, confirm direct local login!</string>
     <string name="login_success">登陆成功</string>
+    <string name="login_location">本地登录成功</string>
 
     <!-- 底部button -->
     <string name="tab_bottom_home">主页</string>
@@ -78,7 +85,18 @@
     <!-- 发现->progress step -->
     <string name="progress_step_title">Progress Step</string>
 
+    <!-- 发现->annular percentage -->
     <string name="text_annular_percentage">环形百分比</string>
+
+    <!-- 发现->humor -->
+    <string name="humor_title">Humor</string>
+
+
+    <!-- 发现->weather -->
+    <string name="weather_title">Weather</string>
+    <string name="weather_input">请输入城市</string>
+    <string name="weather_search">搜索</string>
+    <string name="weather_city_empty_remind">城市不可为空</string>
 
     <!-- 全局-> warn -->
     <string name="navigation_drawer_open">navigation_drawer_open</string>

@@ -2,14 +2,16 @@ package com.fhh.technology.module.discover.progress;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.fhh.technology.R;
 import com.fhh.technology.base.BaseActivity;
+import com.fhh.technology.base.Constant;
 import com.fhh.technology.utils.ToolBarOptions;
+import com.jaeger.library.StatusBarUtil;
 
 import butterknife.BindView;
 
@@ -38,10 +40,11 @@ public class ProgressStepActivity extends BaseActivity {
 
     @Override
     public void initToolBar() {
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.bg_find_title), Constant.STATUS_BAR_ALPHA);
         mToolbarTitle.setText(getString(R.string.progress_step_title));
         ToolBarOptions options = new ToolBarOptions();
         options.isNeedNavigate = true;
-        options.backgroundColor = R.color.colorPrimary;
+        options.backgroundColor = R.color.bg_find_title;
         setToolBar(R.id.toolbar, options);
     }
 

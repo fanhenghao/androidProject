@@ -1,5 +1,8 @@
 package com.fhh.technology.module.discover;
 
+import com.fhh.technology.base.IBasePresenter;
+import com.fhh.technology.base.IBaseView;
+
 /**
  * desc:
  * Created by fhh on 2018/10/14
@@ -7,11 +10,11 @@ package com.fhh.technology.module.discover;
 
 public interface DiscoverContract {
 
-    interface Presenter {
+    interface Presenter extends IBasePresenter {
 
     }
 
-    interface View {
+    interface View extends IBaseView {
 
     }
 }
