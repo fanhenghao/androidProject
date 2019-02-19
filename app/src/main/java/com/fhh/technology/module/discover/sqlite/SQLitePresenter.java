@@ -40,6 +40,7 @@ public class SQLitePresenter implements SQLiteContract.Presenter {
         }
         db.insert(Constant.SQLITE_CHART, null, values);
         mView.showToast("录入数据库成功");
+        queryData(db);
     }
 
     @Override
@@ -53,6 +54,7 @@ public class SQLitePresenter implements SQLiteContract.Presenter {
         if (mIdList.size() > 0) {
             db.delete(Constant.SQLITE_CHART, "id = ?", new String[]{mIdList.get(0)});//删除集合的第一条数据
             mView.showToast("已删除当前数据库的第一条记录");
+            queryData(db);
         } else {
             mView.showToast("当前数据库为空");
         }
@@ -70,13 +72,14 @@ public class SQLitePresenter implements SQLiteContract.Presenter {
             values.put("age", "12");
             db.update(Constant.SQLITE_CHART, values, null, null);
             mView.showToast("已修改所有数据年龄为'12'");
+            queryData(db);
         } else {
             mView.showToast("数据库为空");
         }
     }
 
     @Override
-    public String queryData(SQLiteDatabase db) {
+    public void queryData(SQLiteDatabase db) {
         /**
          * table：指定查询的表名，对应 from table_name
          * columns：指定查询的列名，对应 select column1,column2 ...
@@ -102,7 +105,9 @@ public class SQLitePresenter implements SQLiteContract.Presenter {
         String data = sb.toString().trim();
         if (TextUtils.isEmpty(data)) {
             mView.showToast("查询到数据库为空");
+        }else {
+            mView.setSQLiteContent(data);
         }
-        return data;
+
     }
 }

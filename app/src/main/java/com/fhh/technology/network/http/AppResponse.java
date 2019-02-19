@@ -3,9 +3,7 @@ package com.fhh.technology.network.http;
 import android.net.ParseException;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.fhh.technology.base.TechnologyApplication;
 import com.google.gson.JsonParseException;
 
 import org.json.JSONException;
@@ -44,7 +42,7 @@ public class AppResponse<T> extends ResourceSubscriber<T> {
         }
         if (e instanceof HttpCodeException) {//服务器返回的错误
             Log.e("TECHNOLOGY", "http_code:" + ((HttpCodeException) e).getCode());
-        } else if (e instanceof HttpException) {//对网络异常 弹出相应的toast
+        } else if (e instanceof HttpException) {//对网络异常 打出相应的log
             HttpException httpException = (HttpException) e;
             String errorMsg = httpException.getMessage();
             if (TextUtils.isEmpty(errorMsg)) {

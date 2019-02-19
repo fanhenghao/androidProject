@@ -14,7 +14,7 @@ import com.fhh.technology.module.login.LoginActivity;
  * Created by fhh on 2018/9/13
  */
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity implements Runnable {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,13 +22,12 @@ public class SplashActivity extends AppCompatActivity {
             finish();
             return;
         }
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                LoginActivity.start(TechnologyApplication.getInstance());
-                finish();
-            }
-        },500);
+        new Handler().postDelayed(this,500);
     }
 
+    @Override
+    public void run() {
+        LoginActivity.start(this);
+        finish();
+    }
 }

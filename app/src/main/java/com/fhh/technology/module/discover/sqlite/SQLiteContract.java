@@ -12,6 +12,8 @@ public interface SQLiteContract {
     interface View extends IBaseView {
         void createSQLite(int type);
 
+        void setSQLiteContent(String content);
+
     }
 
     interface Presenter extends IBasePresenter {
@@ -22,7 +24,7 @@ public interface SQLiteContract {
 
         void updateData(SQLiteDatabase db,ContentValues values);
 
-        String queryData(SQLiteDatabase db);
+        void queryData(SQLiteDatabase db);
 
     }
 }

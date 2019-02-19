@@ -82,10 +82,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     }
 
     private void initListener() {
-        mEtNumbers.setText("13592127810");
-        mEtNumbers.setSelection(mEtNumbers.length());
-        mEtPasswords.setText("123456");
-        mIbDeleteNumber.setOnClickListener(this);
         mIbDeletePassword.setOnClickListener(this);
         mIbHidePassword.setOnClickListener(this);
         mTvRegister.setOnClickListener(this);
@@ -112,6 +108,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                 }
             }
         });
+        mEtNumbers.setText("13592127810");
+        mEtNumbers.setSelection(mEtNumbers.length());
+        mEtPasswords.setText("123456");
+        mIbDeleteNumber.setOnClickListener(this);
 
     }
 
@@ -172,7 +172,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void loginError(String errorMsg) {
-        ToastUtil.showToast(this, errorMsg);
+//        ToastUtil.showToast(this, errorMsg);
         new MaterialDialog.Builder(this)
                 .title(R.string.login_dialog_net_error_title)
                 .content(R.string.login_dialog_net_error_content)

@@ -140,9 +140,13 @@ public class SQLiteActivity extends BaseActivity implements SQLiteContract.View,
                 mPresenter.updateData(db, values);
                 break;
             case Constant.QUERY:
-                String data = mPresenter.queryData(db);
-                mTvContent.setText(data);
+                mPresenter.queryData(db);
                 break;
         }
+    }
+
+    @Override
+    public void setSQLiteContent(String content) {
+        mTvContent.setText(content);
     }
 }

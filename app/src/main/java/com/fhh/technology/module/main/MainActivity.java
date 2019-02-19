@@ -38,7 +38,10 @@ import java.io.File;
 
 import butterknife.BindView;
 
-
+/**
+ * QQ群：248223304
+ * fanhenghao
+ */
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private static final int TAB_POSITION = 0;//标记第0个位置（主页）
@@ -48,7 +51,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @BindView(R.id.navigation)
     NavigationView mNavigationView;
     ImageView mIvHead;
-
 
     private FragmentTabHost mTabHost;
     private View mHeaderView;

@@ -81,7 +81,6 @@ public class SharedPreferenceUtils {
 
     public String getString(String key) {
         return mSp.getString(key, "");
-
     }
 
     public int getInt(String key, int defValue) {
