@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#62b9d9</color>
     <color name="colorAccent">#BDBDBF</color>
 
-    <!-- 通用color -->
+    <!-- 通用color-->
     <color name="bg_color">#ffffff</color>
     <color name="text_color">#ffffff</color>
     <color name="bg_color_f2f2f2f2">#f2f2f2f2</color>

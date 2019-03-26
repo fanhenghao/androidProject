@@ -59,6 +59,9 @@
     <string name="theme_title">theme</string>
     <string name="theme_button_switch">random switcher</string>
 
+    <!--主页-> custom view-->
+    <string name="custom_title">CustomView</string>
+
     <!-- 个人 -->
     <string name="person_about_author">关于作者</string>
     <string name="person_login_out">退出登陆</string>

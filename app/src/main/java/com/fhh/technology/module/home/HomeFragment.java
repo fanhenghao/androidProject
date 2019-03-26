@@ -49,7 +49,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.View, Vie
 
     @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler();
-    private int mCurrent;
+    private int mCurrent = 1;
     private float mDowm_x;
     private float mMove_x;
 
@@ -92,7 +92,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.View, Vie
             imageView.setBackgroundResource(images[i]);
             imageList.add(imageView);
         }
-        HomePagerAdapter adapter = new HomePagerAdapter(getContext(), imageList);
+        HomePagerAdapter adapter = new HomePagerAdapter(mViewPager, getContext(), imageList);
         mViewPager.setAdapter(adapter);
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -102,13 +102,13 @@ public class HomeFragment extends BaseFragment implements HomeContract.View, Vie
 
             @Override
             public void onPageSelected(int position) {
-                if (position == imageList.size() - 1) {
-                    mCurrent = 1;
-                } else if (position == 0) {
-                    mCurrent = imageList.size() - 2;
-                } else {
-                    mCurrent = position;
-                }
+//                if (position == imageList.size() - 1) {
+//                    mCurrent = 1;
+//                } else if (position == 0) {
+//                    mCurrent = imageList.size() - 2;
+//                } else {
+//                    mCurrent = position;
+//                }
             }
 
             @Override
@@ -117,27 +117,15 @@ public class HomeFragment extends BaseFragment implements HomeContract.View, Vie
             }
         });
         mViewPager.setOnTouchListener(this);
+        mViewPager.setCurrentItem(1);
+        mHandler.postDelayed(mRunnable, 2000);
     }
 
     private Runnable mRunnable = new Runnable() {
         @Override
         public void run() {
-//            mCurrent = mViewPager.getCurrentItem() % 4;
-//            if (mCurrent >= 3) {
-//                mViewPager.setCurrentItem(0, false);
-//                mHandler.postDelayed(mRunnable, 2000);
-//            } else {
-            if (mCurrent == imageList.size()) {
-                mViewPager.setCurrentItem(mCurrent, false);
-                mHandler.post(mRunnable);
-            } else {
-                mViewPager.setCurrentItem(mCurrent);
-                mHandler.postDelayed(mRunnable, 2000);
-            }
-            if (mCurrent < imageList.size() - 1) {
-                mCurrent++;
-            }
-//            }
+            mViewPager.setCurrentItem(mViewPager.getCurrentItem() + 1);
+            mHandler.postDelayed(mRunnable, 2000);
         }
     };
 
@@ -151,7 +139,6 @@ public class HomeFragment extends BaseFragment implements HomeContract.View, Vie
     public void onStop() {
         super.onStop();
         stopCarousel();
-
     }
 
     @Override
@@ -169,7 +156,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.View, Vie
                 break;
             case MotionEvent.ACTION_MOVE:
                 mMove_x = event.getX();
-                stopCarousel();
+//                stopCarousel();
                 break;
             case MotionEvent.ACTION_UP:
                 startCarousel();
@@ -183,7 +170,7 @@ public class HomeFragment extends BaseFragment implements HomeContract.View, Vie
 
     @Override
     public void startCarousel() {
-        mHandler.post(mRunnable);
+        mHandler.postDelayed(mRunnable, 2000);
     }
 
     @Override

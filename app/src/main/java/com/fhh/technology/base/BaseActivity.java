@@ -54,7 +54,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    //参照今日头条方案解决适配问题
+    //解决适配问题
     public static void setCustomDensity(@NonNull Activity activity, @NonNull final Application application) {
         DisplayMetrics appDisplayMetrics = application.getResources().getDisplayMetrics();
         if (sNoncompatDensity == 0) {
