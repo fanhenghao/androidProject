@@ -3,18 +3,24 @@ package com.fhh.technology.base;
 import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentCallbacks;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.fhh.technology.R;
 import com.fhh.technology.event.DefaultEvent;
+import com.fhh.technology.utils.AppManager;
 import com.fhh.technology.utils.ToastUtil;
 import com.fhh.technology.utils.ToolBarOptions;
 
@@ -37,6 +43,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private static float sNoncompatDensity;
     private static float sNoncompatScaledDensity;
+    private MaterialDialog mDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +52,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(setContentLayout());
         mUnbinder = ButterKnife.bind(this);
         this.mActivity = this;
+        AppManager.getInstance().addActivity(mActivity);
         initToolBar();
         initPresenter();
         initData();
@@ -191,6 +199,21 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void showToast(int resId) {
         ToastUtil.showToast(this, resId + "");
     }
+
+    public void showLoading() {
+        mDialog = new MaterialDialog.Builder(this)
+                .progress(true, -1)
+                .content(getString(R.string.loading))
+                .canceledOnTouchOutside(false)
+                .show();
+    }
+
+    public void hideLoading() {
+        if (mDialog != null) {
+            mDialog.dismiss();
+        }
+    }
+
 
     private void onNavigateUpClicked() {
         onBackPressed();

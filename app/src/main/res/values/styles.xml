@@ -9,12 +9,17 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
-
     <!-- 欢迎界面主题 -->
     <style name="Splash_Style" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_bg</item>
         <item name="android:windowFullscreen">true</item>
         <!--<item name="android:windowIsTranslucent">true</item>--><!--设置一启动的背景为透明-->
     </style>
+
+    <style name="Animation_Splash" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
 
 </resources>

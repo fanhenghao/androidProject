@@ -2,11 +2,16 @@ package com.fhh.technology.module.main;
 
 import android.content.Context;
 import android.content.Intent;
+
 import androidx.annotation.NonNull;
+
+import com.fhh.technology.module.home.constraint.ConstraintLayoutActivity;
 import com.google.android.material.navigation.NavigationView;
+
 import androidx.fragment.app.FragmentTabHost;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -188,6 +193,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 break;
             case R.id.nav_scan:
                 ToastUtil.showToast(this, "nav_scan");
+                break;
+            case R.id.nav_constraint:
+                ConstraintLayoutActivity.start(this);
                 break;
         }
         mDrawerLayout.closeDrawer(Gravity.LEFT);

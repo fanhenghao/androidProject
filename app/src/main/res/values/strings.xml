@@ -58,6 +58,18 @@
     <!-- 主页-> theme -->
     <string name="theme_title">theme</string>
     <string name="theme_button_switch">random switcher</string>
+    <!-- splash -->
+    <string name="app_title">Android技术</string>
+    <string name="splash_title_1">T</string>
+    <string name="splash_title_2">e</string>
+    <string name="splash_title_3">c</string>
+    <string name="splash_title_4">h</string>
+    <string name="splash_title_5">n</string>
+    <string name="splash_title_6">o</string>
+    <string name="splash_title_7">l</string>
+    <string name="splash_title_8">o</string>
+    <string name="splash_title_9">g</string>
+    <string name="splash_title_10">y</string>
 
     <!--主页-> custom view-->
     <string name="custom_title">CustomView</string>
@@ -104,6 +116,7 @@
     <!-- 全局-> warn -->
     <string name="navigation_drawer_open">navigation_drawer_open</string>
     <string name="navigation_drawer_close">navigation_drawer_close</string>
+    <string name="loading">加载中...</string>
 
     <!-- else -->
     <string name="text_content_wait">待实现中</string>

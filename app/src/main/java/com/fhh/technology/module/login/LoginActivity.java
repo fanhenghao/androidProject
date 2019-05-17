@@ -2,7 +2,9 @@ package com.fhh.technology.module.login;
 
 import android.content.Context;
 import android.content.Intent;
+
 import androidx.annotation.NonNull;
+
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
@@ -143,6 +145,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             case R.id.btn_login:
                 String number = mEtNumbers.getText().toString().trim();
                 String password = mEtPasswords.getText().toString().trim();
+                showLoading();
                 if (mPresenter != null) {
                     mPresenter.manageNumberAndPassword(number, password);
                 }
@@ -165,6 +168,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void loginSuccess(int successRemind) {
+        hideLoading();
         ToastUtil.showToast(this, successRemind);
         MainActivity.start(this);
         finish();
@@ -172,7 +176,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void loginError(String errorMsg) {
-//        ToastUtil.showToast(this, errorMsg);
+        hideLoading();
         new MaterialDialog.Builder(this)
                 .title(R.string.login_dialog_net_error_title)
                 .content(R.string.login_dialog_net_error_content)

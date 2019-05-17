@@ -1,6 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/splash_t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:padding="2dp"
+        android:text="@string/splash_title_1"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_26"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/splash_e1"
+        app:layout_constraintRight_toLeftOf="@+id/splash_e1"
+        app:layout_constraintTop_toTopOf="@+id/splash_e1"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/splash_e1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:padding="2dp"
+        android:text="@string/splash_title_2"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_26"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/splash_c1"
+        app:layout_constraintRight_toLeftOf="@+id/splash_c1"
+        app:layout_constraintTop_toTopOf="@+id/splash_c1"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/splash_c1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:padding="2dp"
+        android:text="@string/splash_title_3"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_26"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/splash_h1"
+        app:layout_constraintRight_toLeftOf="@+id/splash_h1"
+        app:layout_constraintTop_toTopOf="@+id/splash_h1"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/splash_h1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:padding="2dp"
+        android:text="@string/splash_title_4"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_26"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/splash_n1"
+        app:layout_constraintRight_toLeftOf="@+id/splash_n1"
+        app:layout_constraintTop_toTopOf="@+id/splash_n1"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/splash_n1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:padding="2dp"
+        android:text="@string/splash_title_5"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_26"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline20"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/splash_o1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:padding="2dp"
+        android:text="@string/splash_title_6"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_26"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/splash_n1"
+        app:layout_constraintLeft_toRightOf="@+id/splash_n1"
+        app:layout_constraintTop_toTopOf="@+id/splash_n1"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/splash_l1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:padding="2dp"
+        android:text="@string/splash_title_7"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_26"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/splash_o1"
+        app:layout_constraintLeft_toRightOf="@+id/splash_o1"
+        app:layout_constraintTop_toTopOf="@+id/splash_o1"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/splash_o2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:padding="2dp"
+        android:text="@string/splash_title_8"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_26"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/splash_l1"
+        app:layout_constraintLeft_toRightOf="@+id/splash_l1"
+        app:layout_constraintTop_toTopOf="@+id/splash_l1"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/splash_g1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:padding="2dp"
+        android:text="@string/splash_title_9"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_26"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/splash_o2"
+        app:layout_constraintLeft_toRightOf="@+id/splash_o2"
+        app:layout_constraintTop_toTopOf="@+id/splash_o2"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/splash_y1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:padding="2dp"
+        android:text="@string/splash_title_10"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_26"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/splash_g1"
+        app:layout_constraintLeft_toRightOf="@+id/splash_g1"
+        app:layout_constraintTop_toTopOf="@+id/splash_g1"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/splash_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/app_title"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_16"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/splash_logo"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginBottom="0dp"
+        android:src="@mipmap/ic_app_icon"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/splash_n1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.61" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

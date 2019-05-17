@@ -22,9 +22,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".module.splash.SplashActivity"
+            android:name=".module.splash.AnimationSplashActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Splash_Style">
+            android:theme="@style/Animation_Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -108,6 +108,10 @@
 
         <activity
             android:name=".module.discover.weather.WeatherActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".module.home.constraint.ConstraintLayoutActivity"
             android:screenOrientation="portrait" />
 
     </application>

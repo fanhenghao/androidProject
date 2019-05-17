@@ -1,13 +1,9 @@
-package com.duan.musicoco.util;
+package com.fhh.technology.utils;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
@@ -15,6 +11,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by DuanJiaNing on 2017/5/30.
@@ -78,7 +76,7 @@ public class Utils {
     /**
      * 获得 ListView 的高度，每一项的高度之和
      */
-    public static int getListViewHeight(@NonNull ListView listView) {
+    public static int getListViewHeight( ListView listView) {
         int totalHeight = 0;
         ListAdapter listAdapter = listView.getAdapter();
         if (listAdapter != null) {
@@ -91,14 +89,4 @@ public class Utils {
         return totalHeight;
     }
 
-    public static String getApplicationMetaData(Context context, String name) throws PackageManager.NameNotFoundException {
-        ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
-        String str = appInfo.metaData.getString(name);
-        String res = null;
-        if (StringUtils.isReal(str) && str.indexOf("*") == str.length() - 1) {
-            res = str.substring(0, str.length() - 1);
-        }
-        return res;
-
-    }
 }
