@@ -21,16 +21,29 @@ android {
     }
 
     buildTypes {
-
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    if (outputFileName != null && outputFileName.endsWith('debug.apk')) {
+                        outputFileName = "technology_dev${defaultConfig.versionName}.apk"
+                    }
+                }
+            }
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.signature
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {
+                    if (outputFileName != null && outputFileName.endsWith('release.apk')) {
+                        outputFileName = "technology_rel${defaultConfig.versionName}.apk"
+                    }
+                }
+            }
         }
     }
 

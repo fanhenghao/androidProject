@@ -10,6 +10,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -18,6 +19,7 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fhh.technology.R;
@@ -61,6 +63,10 @@ public class AnimationOtherActivity extends BaseActivity {
     ImageView mIvAnimationXml;
     @BindView(R.id.tv_animation_xml)
     TextView mTvAnimationXml;
+    @BindView(R.id.view)
+    View mView;
+    @BindView(R.id.ll)
+    LinearLayout mLl;
 
 
     private float mRotateForm = 0.0f;
@@ -138,26 +144,42 @@ public class AnimationOtherActivity extends BaseActivity {
      * 属性动画
      */
     private void attributeAnimation() {
+
+
         //属性动画-移动动画
         mTvAttributeMoveAnimation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(mIvAttributeMoveArrow, "translationX", mAttributeTranslateFormX, mAttributeTranslateToX);
-                if (mAttributeTranslateToX < 270.0f) {
-                    mAttributeTranslateToX += 90.0f;
-                    mAttributeTranslateFormX += 90.0f;
-                } else {
-                    mAttributeTranslateToX = 90.0f;
-                    mAttributeTranslateFormX = 0.0f;
-                }
-                objectAnimator.setDuration(1500);
-                objectAnimator.start();
-                objectAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
-                        mTvAttributeMoveAnimation.setText(getString(R.string.animation_other_arrow_translate) + (int) ((float) animation.getAnimatedValue()));
-                    }
-                });
+
+                ObjectAnimator translationYAnimator = ObjectAnimator.ofFloat(mLl, "translationY", 0, -600);
+//                PropertyValuesHolder scaleXAnimation = PropertyValuesHolder.ofFloat("scaleX",0.0f, 1.0f);
+                PropertyValuesHolder scaleYAnimation = PropertyValuesHolder.ofFloat("scaleY", 0f, 18.0f);
+
+                ObjectAnimator scaleAnimation = ObjectAnimator.ofPropertyValuesHolder(mView, scaleYAnimation);
+//                scaleAnimation.setDuration(5500);
+//                scaleAnimation.start();
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.setDuration(4200);
+                animatorSet.playTogether(translationYAnimator,scaleAnimation);
+                animatorSet.start();
+
+
+//                ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(mIvAttributeMoveArrow, "translationX", mAttributeTranslateFormX, mAttributeTranslateToX);
+//                if (mAttributeTranslateToX < 270.0f) {
+//                    mAttributeTranslateToX += 90.0f;
+//                    mAttributeTranslateFormX += 90.0f;
+//                } else {
+//                    mAttributeTranslateToX = 90.0f;
+//                    mAttributeTranslateFormX = 0.0f;
+//                }
+//                objectAnimator.setDuration(1500);
+//                objectAnimator.start();
+//                objectAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//                    @Override
+//                    public void onAnimationUpdate(ValueAnimator animation) {
+//                        mTvAttributeMoveAnimation.setText(getString(R.string.animation_other_arrow_translate) + (int) ((float) animation.getAnimatedValue()));
+//                    }
+//                });
             }
         });
         mIvAttributeMoveArrow.setOnClickListener(new View.OnClickListener() {
