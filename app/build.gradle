@@ -12,11 +12,17 @@ android {
     }
 
     signingConfigs {
-        signature {
-            storeFile file(KEY_PATH)
-            storePassword KEY_PASS
-            keyAlias ALIES_NAME
-            keyPassword ALIES_PASS
+        debug {
+            storeFile file('/Users/fanhenghao/Desktop/else/GitHub/technology/app.jks')
+            storePassword 'android'
+            keyAlias 'key0'
+            keyPassword 'android'
+        }
+        release {
+            storeFile file('/Users/fanhenghao/Desktop/else/GitHub/technology/app.jks')
+            storePassword 'android'
+            keyAlias 'key0'
+            keyPassword 'android'
         }
     }
 
@@ -36,7 +42,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.signature
             android.applicationVariants.all { variant ->
                 variant.outputs.all {
                     if (outputFileName != null && outputFileName.endsWith('release.apk')) {
@@ -63,24 +68,27 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //noinspection GradleCompatible
     implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
-    implementation 'androidx.cardview:cardview:1.0.0'//cardview
+    implementation 'androidx.cardview:cardview:1.0.0'
+    //cardview
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
-    implementation 'com.jakewharton:butterknife:8.8.1'//butteknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    //butteknife
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.jakewharton:butterknife:10.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
     implementation 'org.jetbrains:annotations-java5:15.0'
-
-    implementation project(':dialog')//dialog弹窗库
-
-    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'//material-dialog弹窗
-    implementation 'org.greenrobot:eventbus:3.1.1'//eventbus事件传递
-    implementation 'com.squareup.picasso:picasso:2.5.2'//picasso图库
-
+    implementation project(':dialog')
+    //dialog弹窗库
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    //material-dialog弹窗
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    //eventbus事件传递
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    //picasso图库
     //网络请求(retroft2+rxjava2)
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
@@ -88,5 +96,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-
+    //BasePopup主体库
+    implementation 'com.github.razerdp:BasePopup:2.2.0'
+    //BasePopup support支持库（如支持DialogFragment里弹Popup时的层序支持）
+    implementation 'com.github.razerdp:BasePopup-compat-support:2.2.0'
+    //BasePopup lifecycle支持库（如自动适配Activity/Fragment生命期dismiss/回收等）
+    implementation 'com.github.razerdp:BasePopup-compat-lifecycle:2.2.0'
 }

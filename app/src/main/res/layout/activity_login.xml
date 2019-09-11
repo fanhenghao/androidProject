@@ -154,5 +154,15 @@
         android:layout_height="@dimen/margin_0"
         android:layout_weight="1" />
 
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:textColor="@color/text_normal_color"
+        android:textSize="@dimen/text_size_13"
+        tools:text="v1.0.0" />
+
 
 </LinearLayout>

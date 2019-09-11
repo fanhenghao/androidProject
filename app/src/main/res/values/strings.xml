@@ -121,5 +121,11 @@
     <!-- else -->
     <string name="text_content_wait">待实现中</string>
 
+    <!--版本更新-->
+    <string name="version_title_up">版本更新啦</string>
+    <string name="version_desc">1、新功能电器助手上线\n2、修改bug,增强用户体验\n3、全新的界面设计</string>
+    <string name="version_skip">跳过</string>
+    <string name="version_up">更新</string>
+
 
 </resources>

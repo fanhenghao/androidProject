@@ -1,11 +1,15 @@
 package com.fhh.technology.module.login;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 
 import androidx.annotation.NonNull;
 
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -21,8 +25,12 @@ import com.fhh.technology.R;
 import com.fhh.technology.base.BaseActivity;
 import com.fhh.technology.module.login.register.RegisterActivity;
 import com.fhh.technology.module.main.MainActivity;
+import com.fhh.technology.module.update.DownloadService;
+import com.fhh.technology.module.update.UpdatePopup;
+import com.fhh.technology.utils.StringUtils;
 import com.fhh.technology.utils.ToastUtil;
 
+import androidx.core.app.ActivityCompat;
 import butterknife.BindView;
 
 /**
@@ -31,6 +39,8 @@ import butterknife.BindView;
  */
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener, LoginContract.View {
+
+    private static final int REQUEST_PERMISSION = 1;
 
     @BindView(R.id.et_numbers)
     EditText mEtNumbers;
@@ -46,10 +56,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     Button mBtnLogin;
     @BindView(R.id.tv_register)
     TextView mTvRegister;
+    @BindView(R.id.tv_version)
+    TextView mTvVersion;
 
+    private String[] mPermission = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
     private boolean showPassword;
     private LoginPresenter mPresenter;
+    private UpdatePopup mUpdatePopup;
 
     public static void start(Context context) {
         Intent intent = new Intent(context, LoginActivity.class);
@@ -76,6 +90,41 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     @Override
     public void initData() {
         initListener();
+        mTvVersion.setText("v" + StringUtils.getAppVersionName(this));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            ActivityCompat.requestPermissions(this, mPermission, REQUEST_PERMISSION);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case REQUEST_PERMISSION:
+                //权限
+                boolean permission = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                if (!permission) {
+                    ToastUtil.showToast(mActivity, "请前往设置给予存储权限");
+                    finish();
+                } else {
+                    String version = StringUtils.getAppVersionName(mActivity);
+                    if (TextUtils.equals(version, "1.0.0")) {//版本更新
+                        mUpdatePopup = new UpdatePopup(mActivity);
+                        mUpdatePopup.setOutSideDismiss(false);
+                        mUpdatePopup.showPopupWindow();
+                        mUpdatePopup.findViewById(R.id.tv_skip).setOnClickListener(v -> mUpdatePopup.dismiss());
+                        mUpdatePopup.findViewById(R.id.tv_update).setOnClickListener(v -> {
+                            Intent intent = new Intent(mActivity, DownloadService.class);
+                            intent.putExtra("url", "https://github.com/fanhenghao/androidProject/raw/master/technology_rel1.0.1.apk");
+//                            intent.putExtra("url", "http://yunchudian.oss-cn-shanghai.aliyuncs.com/mobiletest/yunchudianManagerOnline.apk");
+                            mActivity.startService(intent);
+                            ToastUtil.showToast(mActivity, "后台更新下载中...");
+                            mUpdatePopup.dismiss();
+                        });
+                    }
+                }
+                break;
+        }
     }
 
     @Override
@@ -114,7 +163,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         mEtNumbers.setSelection(mEtNumbers.length());
         mEtPasswords.setText("123456");
         mIbDeleteNumber.setOnClickListener(this);
-
     }
 
     @Override
