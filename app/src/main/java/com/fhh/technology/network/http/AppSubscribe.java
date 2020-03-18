@@ -1,9 +1,13 @@
 package com.fhh.technology.network.http;
 
 
+import com.fhh.technology.base.Constant;
+import com.fhh.technology.network.bean.BaseBean;
+
 import io.reactivex.Flowable;
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**

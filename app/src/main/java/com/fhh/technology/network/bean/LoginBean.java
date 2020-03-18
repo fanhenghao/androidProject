@@ -11,35 +11,6 @@ public class LoginBean{
      * data : {"key":"00d91e8e0cca2b76f515926a36db68f5","phone":"13592127817","name":null,"passwd":"123456","text":null,"img":null,"other":null,"other2":null,"createTime":"2019-01-04 16:31:58"}
      */
 
-//    private int code;
-//    private String msg;
-//    private DataBean data;
-//
-//    public int getCode() {
-//        return code;
-//    }
-//
-//    public void setCode(int code) {
-//        this.code = code;
-//    }
-//
-//    public String getMsg() {
-//        return msg;
-//    }
-//
-//    public void setMsg(String msg) {
-//        this.msg = msg;
-//    }
-//
-//    public DataBean getData() {
-//        return data;
-//    }
-//
-//    public void setData(DataBean data) {
-//        this.data = data;
-//    }
-//
-//    public static class DataBean {
         /**
          * key : 00d91e8e0cca2b76f515926a36db68f5
          * phone : 13592127817
@@ -133,5 +104,4 @@ public class LoginBean{
         public void setCreateTime(String createTime) {
             this.createTime = createTime;
         }
-//    }
 }

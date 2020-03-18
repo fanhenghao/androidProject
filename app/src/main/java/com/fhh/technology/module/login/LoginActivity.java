@@ -107,21 +107,21 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     ToastUtil.showToast(mActivity, "请前往设置给予存储权限");
                     finish();
                 } else {
-                    String version = StringUtils.getAppVersionName(mActivity);
-                    if (TextUtils.equals(version, "1.0.0")) {//版本更新
-                        mUpdatePopup = new UpdatePopup(mActivity);
-                        mUpdatePopup.setOutSideDismiss(false);
-                        mUpdatePopup.showPopupWindow();
-                        mUpdatePopup.findViewById(R.id.tv_skip).setOnClickListener(v -> mUpdatePopup.dismiss());
-                        mUpdatePopup.findViewById(R.id.tv_update).setOnClickListener(v -> {
-                            Intent intent = new Intent(mActivity, DownloadService.class);
-                            intent.putExtra("url", "https://github.com/fanhenghao/androidProject/raw/master/technology_rel1.0.1.apk");
-//                            intent.putExtra("url", "http://yunchudian.oss-cn-shanghai.aliyuncs.com/mobiletest/yunchudianManagerOnline.apk");
-                            mActivity.startService(intent);
-                            ToastUtil.showToast(mActivity, "后台更新下载中...");
-                            mUpdatePopup.dismiss();
-                        });
-                    }
+//                    String version = StringUtils.getAppVersionName(mActivity);
+//                    if (TextUtils.equals(version, "1.0.0")) {//版本更新
+//                        mUpdatePopup = new UpdatePopup(mActivity);
+//                        mUpdatePopup.setOutSideDismiss(false);
+//                        mUpdatePopup.showPopupWindow();
+//                        mUpdatePopup.findViewById(R.id.tv_skip).setOnClickListener(v -> mUpdatePopup.dismiss());
+//                        mUpdatePopup.findViewById(R.id.tv_update).setOnClickListener(v -> {
+//                            Intent intent = new Intent(mActivity, DownloadService.class);
+//                            intent.putExtra("url", "https://github.com/fanhenghao/androidProject/raw/master/technology_rel1.0.1.apk");
+////                            intent.putExtra("url", "http://yunchudian.oss-cn-shanghai.aliyuncs.com/mobiletest/yunchudianManagerOnline.apk");
+//                            mActivity.startService(intent);
+//                            ToastUtil.showToast(mActivity, "后台更新下载中...");
+//                            mUpdatePopup.dismiss();
+//                        });
+//                    }
                 }
                 break;
         }
@@ -193,10 +193,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             case R.id.btn_login:
                 String number = mEtNumbers.getText().toString().trim();
                 String password = mEtPasswords.getText().toString().trim();
-                showLoading();
-                if (mPresenter != null) {
-                    mPresenter.manageNumberAndPassword(number, password);
-                }
+                MainActivity.start(this);
+//                showLoading();
+//                if (mPresenter != null) {
+//                    mPresenter.manageNumberAndPassword(number, password);
+//                }
                 break;
             case R.id.tv_register:
                 RegisterActivity.start(this);

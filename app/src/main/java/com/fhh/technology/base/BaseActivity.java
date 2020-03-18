@@ -214,6 +214,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public Activity getActivity() {
+        return mActivity;
+    }
+
 
     private void onNavigateUpClicked() {
         onBackPressed();

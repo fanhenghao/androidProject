@@ -34,12 +34,6 @@ public class AppResponse<T> extends ResourceSubscriber<T> {
     @Override
     public void onError(Throwable e) {
         Log.e("AppResponse", "onError");
-        Throwable throwable = e;
-        //获取根源 异常
-        while (throwable.getCause() != null) {
-            e = throwable;
-            throwable = throwable.getCause();
-        }
         if (e instanceof HttpCodeException) {//服务器返回的错误
             Log.e("TECHNOLOGY", "http_code:" + ((HttpCodeException) e).getCode());
         } else if (e instanceof HttpException) {//对网络异常 打出相应的log

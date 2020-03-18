@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -8,6 +9,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize">
 
         <TextView
@@ -22,8 +24,22 @@
 
     <EditText
         android:id="@+id/et_error"
-        android:inputType="phone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:gravity="end|center_vertical"/>
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_bg" />
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="240dp"
+        android:layout_height="400dp"
+        android:layout_below="@+id/et_error"
+        android:background="@drawable/ic_welcome_bg" />
+
+</RelativeLayout>
