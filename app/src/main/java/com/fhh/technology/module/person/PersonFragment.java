@@ -8,8 +8,10 @@ import android.widget.TextView;
 
 import com.fhh.technology.R;
 import com.fhh.technology.base.BaseFragment;
+import com.fhh.technology.base.Constant;
 import com.fhh.technology.module.login.LoginActivity;
 import com.fhh.technology.module.person.author.AboutAuthorActivity;
+import com.fhh.technology.utils.SharedPreferenceUtils;
 import com.fhh.technology.utils.ToolBarOptions;
 
 import butterknife.BindView;
@@ -67,6 +69,7 @@ public class PersonFragment extends BaseFragment implements View.OnClickListener
                 break;
             case R.id.tv_login_out:
                 LoginActivity.start(getContext());
+                SharedPreferenceUtils.getInstance(getContext()).put(Constant.KEY_LOGIN_ACCOUNT, "");
                 if (getActivity() != null) {
                     getActivity().finish();
                 }

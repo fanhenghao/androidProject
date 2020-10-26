@@ -195,8 +195,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 ToastUtil.showToast(this, "nav_scan");
                 break;
             case R.id.nav_constraint:
-                ToastUtil.showToast(this, "nav_constraint");
-//                ConstraintLayoutActivity.start(this);
+//                ToastUtil.showToast(this, "nav_constraint");
+                ConstraintLayoutActivity.start(this);
                 break;
         }
         mDrawerLayout.closeDrawer(Gravity.LEFT);

@@ -6,6 +6,7 @@ import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
@@ -15,7 +16,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fhh.technology.R;
+import com.fhh.technology.base.Constant;
 import com.fhh.technology.module.login.LoginActivity;
+import com.fhh.technology.module.main.MainActivity;
+import com.fhh.technology.utils.SharedPreferenceUtils;
 
 import java.util.Random;
 
@@ -168,7 +172,12 @@ public class AnimationSplashActivity extends AppCompatActivity {
     }
 
     public void enterLogin() {
-        LoginActivity.start(this);
+        String account = SharedPreferenceUtils.getInstance(this).getString(Constant.KEY_LOGIN_ACCOUNT);
+        if (TextUtils.isEmpty(account)) {
+            LoginActivity.start(this);
+        } else {
+            MainActivity.start(this);
+        }
         finish();
     }
 

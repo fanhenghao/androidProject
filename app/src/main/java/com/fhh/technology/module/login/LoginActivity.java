@@ -23,10 +23,12 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.fhh.technology.R;
 import com.fhh.technology.base.BaseActivity;
+import com.fhh.technology.base.Constant;
 import com.fhh.technology.module.login.register.RegisterActivity;
 import com.fhh.technology.module.main.MainActivity;
 import com.fhh.technology.module.update.DownloadService;
 import com.fhh.technology.module.update.UpdatePopup;
+import com.fhh.technology.utils.SharedPreferenceUtils;
 import com.fhh.technology.utils.StringUtils;
 import com.fhh.technology.utils.ToastUtil;
 
@@ -193,6 +195,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
             case R.id.btn_login:
                 String number = mEtNumbers.getText().toString().trim();
                 String password = mEtPasswords.getText().toString().trim();
+                SharedPreferenceUtils.getInstance(mActivity).put(Constant.KEY_LOGIN_ACCOUNT,number);
                 MainActivity.start(this);
 //                showLoading();
 //                if (mPresenter != null) {

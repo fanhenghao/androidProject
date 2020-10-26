@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -46,7 +47,8 @@
         android:text="文字4"
         app:layout_constraintCircle="@id/tv_text_1"
         app:layout_constraintCircleAngle="31"
-        app:layout_constraintCircleRadius="@dimen/margin_43" />
+        app:layout_constraintCircleRadius="@dimen/margin_43"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv_2"
@@ -56,7 +58,8 @@
         android:padding="1dp"
         android:text="文字5"
         android:textColor="@color/text_white_color"
-        app:layout_goneMarginRight="20dp" />
+        app:layout_goneMarginRight="20dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,7 +70,8 @@
         android:textColor="@color/text_white_color"
         app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent" />
+        app:layout_constraintRight_toLeftOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="0dp"
@@ -78,7 +82,8 @@
         android:text="文字7"
         android:textColor="@color/text_white_color"
         app:layout_constraintDimensionRatio="1:0"
-        app:layout_constraintTop_toBottomOf="@id/tv_2" />
+        app:layout_constraintTop_toBottomOf="@id/tv_2"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv_8"
@@ -108,20 +113,20 @@
         app:layout_constraintRight_toLeftOf="@id/tv_10"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline"
-        app:layout_constraintGuide_begin="100dp"
-        android:orientation="vertical"/>
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="100dp" />
 
     <Button
-        android:text="Button"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
         android:layout_marginTop="16dp"
+        android:text="Button"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

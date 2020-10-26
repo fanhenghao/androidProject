@@ -55,5 +55,7 @@ public interface Constant {
     int REFRESH_PULL_DOWN = 2;//下拉刷新
     int REFRESH_UP_LOAD_MORE = 3;//加载更多
 
+    String KEY_LOGIN_ACCOUNT = "login_account";
+
 
 }
