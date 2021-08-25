@@ -11,6 +11,8 @@
     <color name="bg_color_f6c3bc">#f6c3bc</color>
     <color name="text_hint_color">#999999</color>
     <color name="text_normal_color">#666666</color>
+    <color name="text_222222">#222222</color>
+    <color name="text_FB6137">#FB6137</color>
     <color name="text_white_color">#ffffff</color>
     <color name="line_color">#eeeeee</color>
     <color name="transparency_color">#00000000</color>

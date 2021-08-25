@@ -115,6 +115,10 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".module.discover.viewpager.PagerActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".module.home.constraint.ConstraintLayoutActivity"
             android:screenOrientation="portrait" />
 

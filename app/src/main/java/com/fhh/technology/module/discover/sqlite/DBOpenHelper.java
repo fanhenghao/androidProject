@@ -21,7 +21,6 @@ public class DBOpenHelper extends SQLiteOpenHelper {
      */
     public static final String CREATE_TECHNOLOGY = "CREATE TABLE technology (" + "id integer PRIMARY KEY Autoincrement, " + "name text, " + "age text, " + "sex text )";
 
-
     public DBOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
         this.mContext = context;

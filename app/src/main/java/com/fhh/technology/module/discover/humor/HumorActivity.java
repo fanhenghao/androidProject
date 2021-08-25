@@ -2,11 +2,10 @@ package com.fhh.technology.module.discover.humor;
 
 import android.app.Activity;
 import android.content.Intent;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.fhh.technology.R;
 import com.fhh.technology.base.BaseActivity;
@@ -17,6 +16,7 @@ import com.jaeger.library.StatusBarUtil;
 
 import java.util.List;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import butterknife.BindView;
 
 /**

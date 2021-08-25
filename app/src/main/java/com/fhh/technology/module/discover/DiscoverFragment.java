@@ -12,6 +12,7 @@ import com.fhh.technology.R;
 import com.fhh.technology.base.BaseFragment;
 import com.fhh.technology.base.Constant;
 import com.fhh.technology.module.discover.humor.HumorActivity;
+import com.fhh.technology.module.discover.viewpager.PagerActivity;
 import com.fhh.technology.module.discover.weather.WeatherActivity;
 import com.fhh.technology.network.bean.DiscoverDataBean;
 import com.fhh.technology.module.discover.annular.AnnularPercentageActivity;
@@ -81,6 +82,8 @@ public class DiscoverFragment extends BaseFragment implements DiscoverContract.V
                 HumorActivity.start(getActivity());
             } else if (position == Constant.WEATHER) {
                 WeatherActivity.start(getActivity());
+            } else if (position == Constant.VIEWPAGER) {
+                PagerActivity.start(getActivity());
             } else {
                 ToastUtil.showToast(getContext(), "" + position);
             }

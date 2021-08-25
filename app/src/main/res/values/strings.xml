@@ -109,6 +109,7 @@
 
     <!-- 发现->weather -->
     <string name="weather_title">Weather</string>
+    <string name="pager_title">Pager</string>
     <string name="weather_input">请输入城市</string>
     <string name="weather_search">搜索</string>
     <string name="weather_city_empty_remind">城市不可为空</string>

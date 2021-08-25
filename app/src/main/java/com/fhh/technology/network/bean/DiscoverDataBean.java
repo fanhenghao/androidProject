@@ -20,7 +20,7 @@ public class DiscoverDataBean {
         itemData.add("Progress Step");
         itemData.add("Humor");
         itemData.add("Weather");
-        itemData.add("Item7");
+        itemData.add("Pager");
         itemData.add("Item8");
         itemData.add("Item9");
         itemData.add("Item10");

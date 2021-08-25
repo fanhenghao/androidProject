@@ -27,6 +27,7 @@ public interface Constant {
     int PROGRESS_STEP = 4;//进度步骤
     int HUMOROUS_JOKES = 5;//Humorous jokes
     int WEATHER = 6;//weather
+    int VIEWPAGER = 7;//viewpager
 
     //SQLite type
     int ADD = 1;
