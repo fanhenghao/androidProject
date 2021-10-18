@@ -2,10 +2,11 @@ package com.fhh.technology.module.discover.humor;
 
 import android.app.Activity;
 import android.content.Intent;
+
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.fhh.technology.R;
 import com.fhh.technology.base.BaseActivity;
