@@ -150,7 +150,7 @@ public class HeadPortraitActivity extends BaseActivity implements HeadPortraitCo
                 File.separator + System.currentTimeMillis() + ".jpeg";
 
         mImaegeUri = FileProvider.getUriForFile(mActivity,
-               "com.fhh.technology.provider",
+               "com.fhh.technology.fileprovider",
                 new File(mPath));
         intoPhotograph.putExtra(MediaStore.EXTRA_OUTPUT, mImaegeUri);
         // 授予目录临时共享权限
